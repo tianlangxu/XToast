@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>点击事件测试</title>
+
+	<style type="text/css">
+		* {margin:0; padding:0;}
+		.message {
+			width: 300px;
+			height: 100px;
+			position:fixed;
+			top:50%;
+			left: 50%;
+			margin-top: -50px;
+			margin-left: -150px;
+			border:4px solid red;
+			border-radius:25px;
+			font:24px/100px "楷体","宋体";
+			text-align:center;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="message" id="msg">
+		关注
+	</div>
+</body>
+</html>
+<script type="text/javascript" src="js/XToast.js"></script>
+<script type="text/javascript">
+	
+	var dMsg = document.getElementById("msg");
+
+	// XToast.initView("top");
+	// XToast.initView("center");
+	// XToast.initView("bottom");
+	// XToast.initView("center","blue");
+	// XToast.initView("500", "100", "24", "red","px","100");
+
+	dMsg.addEventListener("click",function (){
+		if (dMsg.style.borderColor == 'red' || dMsg.style.borderColor == '') {
+			dMsg.style.borderColor = 'green';
+			dMsg.innerHTML = "已关注";
+			XToast.showXToast("已关注");
+		} else {
+			dMsg.style.borderColor = 'red';
+			dMsg.innerHTML = "关注";
+			XToast.showXToast("取消关注");
+		}
+
+	});
+
+</script>
