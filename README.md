@@ -1,7 +1,7 @@
 # XToast #
 <hr>
 
-##说明##
+## 说明 ##
 >采用`JavaScript`实现Android 中应用`Toast`对话框的效果
 
 **效果图:**
@@ -22,7 +22,7 @@
 </script>
 ```
 
-##API：##
+## API： ##
 
 >initView() 初始化视图
 
