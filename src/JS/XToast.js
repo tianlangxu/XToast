@@ -108,10 +108,12 @@
 		} else {
 			fontColor = ""+ textColor
 		}
+
 		boxWidth = +bWidth || 200;
 		boxHeight = +bHeight || 40;
 		fontSize = +textSize || 16;
-		unit = +unit || 'px';
+		
+		unit = getUnit(unit+"");
 
 		windowTop = windowTop || 1;
 
@@ -138,6 +140,24 @@
 		}
 
 		document.body.appendChild(dMess);
+	}
+
+	function getUnit(unit){
+		unit = unit || "px";
+		var str = "";
+
+		switch (unit) {
+			case "em":
+				str = "em";
+				break;
+			case "rem":
+				str = "rem";
+				break;
+			default:
+				str = "px";
+				break;
+		}
+		return str;
 	}
 
 
