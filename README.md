@@ -34,25 +34,25 @@ initView(option);<br>
 
 参数                      |说明
 -------------------------|--------------
-opation（Object）         |参数详解：<br> width：宽度 <br>       height：高度 <br>       fontSize：字体大小 <br>      color：字体颜色 <br>       unit：单位：px/em/rem <br>       bottom：距离下方的位置 <br>       
+*opation：Object*         |参数详解：<br> width：宽度 <br>       height：高度 <br>       fontSize：字体大小 <br>      color：字体颜色 <br>       unit：单位：px/em/rem <br>       bottom：距离下方的位置 <br>       
 
 initView(y);<br>
 
 参数                      |    说明
 -------------------------|--------------
- *y(number or string)：* |改变在Y方向上的位置 
+ *y:number or string* |改变在Y方向上的位置 
  *string:top/center/bottom* |top:显示在最上方，center：显示在中间位置，bottom：显示在下方
 
 <br>
 
 
 
-initView(y,textcolor):<br>
+initView(y,color):<br>
 
 参数                      |    说明
 -------------------------|--------------
-*y(number or string)：* | 改变在Y方向上的位置
-*color(string)：* |修改字体颜色，必须传入颜色值
+*y:number or string* | 改变在Y方向上的位置
+*color:string* |修改字体颜色，必须传入颜色值
 
 
 <br>
@@ -61,12 +61,12 @@ initView(bWidth, bHeight, textSize, textColor,unit,bottom);<br>
 
 参数                      |    说明
 -------------------------|--------------
-*bWidth(number):* |设置宽度<br>
-*bHeight(number):* |设置高度<br>
-*textSize(number):* |设置字体大小<br>
-*textColor(number):* |设置字体颜色<br>
-*unit(number):* |设置单位(px/em/rem...)<br>
-*bottom(number):* |设置距离窗口下部分的距离<br>
+*bWidth:number* |设置宽度<br>
+*bHeight:number* |设置高度<br>
+*textSize:number* |设置字体大小<br>
+*textColor:string* |设置字体颜色<br>
+*unit:string* |设置单位(px/em/rem...)<br>
+*bottom:number* |设置距离窗口下部分的距离<br>
 
 >showXToast() 在界面显示XToast提示
 
@@ -75,8 +75,8 @@ showXToast(info, duration);<br>
 
 参数                      |    说明
 -------------------------|--------------
-*info(string):* |显示信息<br>
-*duration(number):* |显示时长<br>
+*info:string* |显示信息<br>
+*duration:number* |显示时长<br>
 
 >dismissXToast() 隐藏XToast提示
 
