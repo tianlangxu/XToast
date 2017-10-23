@@ -2,7 +2,7 @@
 <hr>
 
 ## 说明 ##
->采用`JavaScript`实现Android 中应用`Toast`对话框的效果
+>采用`JavaScript`实现Android 应用中`Toast`对话框的效果
 
 **效果图:**
 
