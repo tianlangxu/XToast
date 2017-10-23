@@ -6,8 +6,8 @@
 
 **效果图:**
 
-![xiaoguo-pc.png](xiaoguo-pc.png "")
-![xiaoguo-phone.png](xiaoguo-phone.png "")
+![imgs/xiaoguo-pc.png](imgs/xiaoguo-pc.png "")
+![imgs/xiaoguo-phone.png](imgs/xiaoguo-phone.png "")
 
 使用说明
 ```html
@@ -16,7 +16,7 @@
     // init view,not essential
     XToast.initView();
     // use toast show info 
-    XToast.showXTaost();
+    XToast.showXToast();
     // dismiss toast
     XToast.dismissXToast();    
 </script>
@@ -29,11 +29,18 @@
 
 
 **param:**<br>
+initView(option);<br>
+*opation:Object*
+
+参数                      |说明
+-------------------------|--------------
+opation（Object）         |参数详解：<br> width：宽度 <br>       height：高度 <br>       fontSize：字体大小 <br>      color：字体颜色 <br>       unit：单位：px/em/rem <br>       bottom：距离下方的位置 <br>       
+
 initView(y);<br>
 
 参数                      |    说明
 -------------------------|--------------
- *y(number or string)：* | 改变在Y方向上的位置 
+ *y(number or string)：* |改变在Y方向上的位置 
  *string:top/center/bottom* |top:显示在最上方，center：显示在中间位置，bottom：显示在下方
 
 <br>
