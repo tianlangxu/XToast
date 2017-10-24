@@ -36,7 +36,7 @@
             createView()
         }
         if (paramLength == 1) {
-            if (typeof arguments[0] == "object") {
+            if (isObject(arguments[0])) {
                 // this is object
                 createView(arguments[0].width, arguments[0].height, arguments[0].fontSize, arguments[0].color, arguments[0].unit, arguments[0].buttom)
             } else {
@@ -147,6 +147,7 @@
         document.body.appendChild(dMess);
     }
 
+    /*获取当前的单位（px/em/rem）*/
     function getUnit(unit) {
         unit = unit || "px";
         var str = "";
@@ -163,6 +164,16 @@
                 break;
         }
         return str;
+    }
+
+    /**
+     * 判断当前对象是否为Object类型
+     * @param  {[All]}  obj [description] 需要检测的对象
+     * @return {Boolean}     [description] true:Object类型 <br>
+     *                                     false:表示为其他类型
+     */
+    function isObject(obj){
+        return Object.prototype.toString.call(obj) == '[object Object]';
     }
 
 
