@@ -34,7 +34,7 @@ initView(option);<br>
 
 参数                      |说明
 -------------------------|--------------
-*opation：Object*         |参数详解：<br> width：宽度 <br>       height：高度 <br>       fontSize：字体大小 <br>      color：字体颜色 <br>       unit：单位：px/em/rem <br>       bottom：距离下方的位置 <br>       
+*opation：Object*         |参数详解：<br> width：宽度 <br>       height：高度 <br>       fontSize：字体大小 <br>      color：字体颜色 <br>       unit：单位：px/em/rem <br>       bottom：距离下方的位置 <br>       borderRadius:设置边框圆角<br>
 
 initView(y);<br>
 
@@ -67,6 +67,7 @@ initView(bWidth, bHeight, textSize, textColor,unit,bottom);<br>
 *textColor:string* |设置字体颜色<br>
 *unit:string* |设置单位(px/em/rem...)<br>
 *bottom:number* |设置距离窗口下部分的距离<br>
+*borderRadius:number* |设置边框圆角
 
 >showXToast() 在界面显示XToast提示
 
