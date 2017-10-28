@@ -36,14 +36,14 @@
         var paramLength = arguments.length;
         if (paramLength == 0) {
             mWindowBottom = 100;
-            createView()
+            createView();
         }
         if (paramLength == 1) {
             if (isObject(arguments[0])) {
                 // this is object
-                createView(arguments[0].width, arguments[0].height, arguments[0].fontSize, arguments[0].color, arguments[0].unit, arguments[0].buttom, arguments[0].borderRadius)
+                createView(arguments[0].width, arguments[0].height, arguments[0].fontSize, arguments[0].color, arguments[0].unit, arguments[0].buttom, arguments[0].borderRadius);
             } else {
-                setWindowTopOrBottom(arguments[0])
+                setWindowTopOrBottom(arguments[0]);
                 createView();
             }
 
@@ -51,9 +51,9 @@
             setWindowTopOrBottom(arguments[0]);
             setFontColor(arguments[1]);
             setBorderRadius(arguments[2]);
-            createView()
+            createView();
         } else {
-            createView(bWidth, bHeight, textSize, textColor, unit, bottom, borderRadius)
+            createView(bWidth, bHeight, textSize, textColor, unit, bottom, borderRadius);
         }
     }
 
@@ -112,7 +112,7 @@
                 mWindowBottom = 0;
             } else {
                 mWindowTop = y;
-                mWindowBottom = "null"
+                mWindowBottom = "null";
                 //mWindowBottom = y;
             }
 
@@ -128,9 +128,9 @@
         }
 
         if (textColor == undefined) {
-            mFontColor = "" + mFontColor
+            mFontColor = "" + mFontColor;
         } else {
-            mFontColor = "" + textColor
+            mFontColor = "" + textColor;
         }
 
         mBoxWidth = parseFloat(bWidth) || 200;
@@ -154,7 +154,7 @@
         dMess.style.background = "rgba(0,0,0,0.5)";
         dMess.style.position = "fixed";
         dMess.style.left = "50%";
-        dMess.style.marginLeft = (-mBoxWidth / 2) + "" + mUnit
+        dMess.style.marginLeft = (-mBoxWidth / 2) + "" + mUnit;
 
         dMess.style.borderRadius = mBorderRadius + "" + mUnit;
         dMess.style.font = (+mFontSize) + "px/" + (+mBoxHeight) + mUnit + " '楷体','宋体'";
