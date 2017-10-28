@@ -20,7 +20,6 @@
     /* init view */
     createView(200, 40, 14, "#FFF", "px", 100);
 
-
     /**
      * 初始化XToast样式
      * @param  {[number]} bWidth    [description] 设置宽度
@@ -57,6 +56,54 @@
         }
     }
 
+
+    /**
+     * 在界面显示XToast
+     * @param  {[string]} info     [description] 显示信息
+     * @param  {[number]} duration [description] 显示时长
+     */
+    owner.showXToast = function (info, duration) {
+        info = info || '';
+        duration = parseFloat(duration) || 3000;
+
+        this.dismissXToast();
+        clearTimeout(getTimeoutFirst); // 取消第一个setTimeout
+        clearTimeout(getTimeoutSecond);
+
+        getTimeoutFirst = setTimeout(function () {
+            dMess.innerHTML = info + "";
+
+            if (dMess.style.display == "none" || dMess.style.display == "") {
+                dMess.style.display = "block";
+            }
+
+            getTimeoutSecond = setTimeout(function () {
+                if (dMess.style.display == "block") {
+                    dMess.style.display = "none";
+                }
+            }, duration);
+
+        }, 200);
+    };
+
+    /**
+     * 隐藏XToast显示
+     */
+    owner.dismissXToast = function () {
+        if (dMess.style.display == "block") {
+            dMess.style.display = "none";
+        }
+    }
+
+    /**
+     * 判断当前对象是否为Object类型
+     * @param  {[All]}  obj [description] 需要检测的对象
+     * @return {Boolean}     [description] true:Object类型 <br>
+     *                                     false:表示为其他类型
+     */
+    function isObject(obj) {
+        return Object.prototype.toString.call(obj) == '[object Object]';
+    }
 
     /**
      * 设置边框弧度
@@ -119,6 +166,26 @@
         }
     }
 
+
+    /*获取当前的单位（px/em/rem）*/
+    function getUnit(mUnit) {
+        mUnit = mUnit || "px";
+        var str = "";
+
+        switch (mUnit) {
+            case "em":
+                str = "em";
+                break;
+            case "rem":
+                str = "rem";
+                break;
+            default:
+                str = "px";
+                break;
+        }
+        return str;
+    }
+
     /*创建视图*/
     function createView(bWidth, bHeight, textSize, textColor, unit, bottom, borderRadius) {
         if (bottom == undefined) {
@@ -143,9 +210,7 @@
             mBorderRadius = parseFloat(borderRadius) || (mBoxWidth / 2);
         }
 
-
         mUnit = getUnit(unit + "");
-
         mWindowTop = mWindowTop || 1;
 
         /** 初始化CSS样式 */
@@ -172,72 +237,5 @@
         document.body.appendChild(dMess);
     }
 
-    /*获取当前的单位（px/em/rem）*/
-    function getUnit(mUnit) {
-        mUnit = mUnit || "px";
-        var str = "";
-
-        switch (mUnit) {
-            case "em":
-                str = "em";
-                break;
-            case "rem":
-                str = "rem";
-                break;
-            default:
-                str = "px";
-                break;
-        }
-        return str;
-    }
-
-    /**
-     * 判断当前对象是否为Object类型
-     * @param  {[All]}  obj [description] 需要检测的对象
-     * @return {Boolean}     [description] true:Object类型 <br>
-     *                                     false:表示为其他类型
-     */
-    function isObject(obj) {
-        return Object.prototype.toString.call(obj) == '[object Object]';
-    }
-
-
-    /**
-     * 在界面显示XToast
-     * @param  {[string]} info     [description] 显示信息
-     * @param  {[number]} duration [description] 显示时长
-     */
-    owner.showXToast = function (info, duration) {
-        info = info || '';
-        duration = parseFloat(duration) || 3000;
-
-        this.dismissXToast();
-        clearTimeout(getTimeoutFirst); // 取消第一个setTimeout
-        clearTimeout(getTimeoutSecond);
-
-        getTimeoutFirst = setTimeout(function () {
-            toastInfo.innerHTML = info + "";
-
-            if (toastInfo.style.display == "none" || toastInfo.style.display == "") {
-                toastInfo.style.display = "block";
-            }
-
-            getTimeoutSecond = setTimeout(function () {
-                if (toastInfo.style.display == "block") {
-                    toastInfo.style.display = "none";
-                }
-            }, duration);
-
-        }, 200);
-    };
-
-    /**
-     * 隐藏XToast显示
-     */
-    owner.dismissXToast = function () {
-        if (toastInfo.style.display == "block") {
-            toastInfo.style.display = "none";
-        }
-    }
 
 })(document, window.XToast = {});
